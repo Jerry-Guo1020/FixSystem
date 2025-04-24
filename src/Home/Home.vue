@@ -29,13 +29,10 @@ function gotologin(){
     justify-content: center;                   /*在水平方向上对齐容器内的子元素*/
     align-items: center;                       /*在垂直方向上对齐容器内的子元素*/
     height: 100vh;                             /*将容器的高度设置为视口的高度的100% */
-    background-image:url(/src/image/R.jpg);     /*导入照片*/
-    background-size: cover;                     /*将整个照片覆盖整个屏幕 */
-    background-repeat: no-repeat;              /* 防止背景图片重复 */
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     padding: 50px;
     text-align: center;

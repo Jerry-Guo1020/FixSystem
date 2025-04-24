@@ -17,8 +17,9 @@ const routes = [
     {
         path: '/section',
         name: "section",
-        component: Section
-    },
+        component: Section,
+        
+      }
 ];
 
 const router = createRouter({
