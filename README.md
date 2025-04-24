@@ -1,6 +1,19 @@
-# Vue 3 + Vite
+# FixSystem -web
+## 这个是一个大学保修管理系统
+### 主要功能
+1. 维修人员登录
+2. 学生管理
+3. 维修人员管理
+4. 宿舍楼管理
+5. 维修类别管理
+6. 维修管理
+7. 接单管理
+8. 评论管理
+9. 公告管理
+10. 管理员管理
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 技术栈
+使用 vite + vue3 + bun 来进行开发该前端项目
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
-# FixSystem
+## 注意事项
+好好学习，天天向上！
