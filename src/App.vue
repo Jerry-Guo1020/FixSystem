@@ -1,15 +1,9 @@
 <script setup>
-import HelloWorld from './components/Home.vue'
+
 </script>
 
 <template>
-  <HelloWorld></HelloWorld>
+<router-view></router-view>
+
 </template>
 
-<style>
-.title{
-  font-size: 30px;
-  color: red;
-
-}
-</style>
