@@ -19,7 +19,7 @@
     <!-- //左侧菜单 -->
     <div class="content-container">      
       <div class="side-menu">
-        <div v-for="item in menu" :key="item.key" class="menu-item">
+        <div v-for="item in menu" :key="item.key" class="menu-item" @click="toSectionClick(item.path)">
           {{ item.label }}
         </div>
       </div>
@@ -52,22 +52,26 @@ const more = [
   },
 ]
 
-//在更多菜单里面的退出登录的一个点击事件，然后
+//在更多菜单里面的退出登录的一个点击事件，然后就跳转到登录页面
 const toLoginClick = (path) => {
   router.push(path);
 }
 
+const toSectionClick = (path) => {
+  router.push(path);
+}
+
 const menu = [
-  { label: '统计分析', key: 'statistics', icon: '<BadgeCheck /> ', path : '/'},
-  { label: '学生管理', key: 'students', icon: 'fa fa-user' },
-  { label: '维修人员管理', key: 'repairmen', icon: 'fa fa-wrench' },
-  { label: '宿舍楼管理', key: 'dormitories', icon: 'fa fa-building' },
-  { label: '维修类别管理', key: 'categories', icon: 'fa fa-list' },
-  { label: '维修管理', key: 'repairs', icon: 'fa fa-tools' },
-  { label: '接单管理', key: 'orders', icon: 'fa fa-clipboard' },
-  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' },
-  { label: '公告管理', key: 'announcements', icon: 'fa fa-bullhorn' },
-  { label: '管理员管理', key: 'admins', icon: 'fa fa-users' },
+  { label: '统计分析', key: 'statistics', icon: '<BadgeCheck /> ', path : '/Statistics'},
+  { label: '学生管理', key: 'students', icon: 'fa fa-user' , path : '/studentmanagement'},
+  { label: '维修人员管理', key: 'repairmen', icon: 'fa fa-wrench', path :'/fixPersonnelManagement' },
+  { label: '宿舍楼管理', key: 'dormitories', icon: 'fa fa-building' ,path :'/Dormitory' },
+  { label: '维修类别管理', key: 'categories', icon: 'fa fa-list' ,path : '/fixSortManagement'},
+  { label: '维修管理', key: 'repairs', icon: 'fa fa-tools' ,path : '/fixManagement'},
+  { label: '接单管理', key: 'orders', icon: 'fa fa-clipboard' ,path : '/fixSortManagement'},
+  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' ,path : '/orderManagement'},
+  { label: '公告管理', key: 'announcements', icon: 'fa fa-bullhorn' ,path : '/notionManagement'},
+  { label: '管理员管理', key: 'admins', icon: 'fa fa-users' ,path : '/AdminManagement'},
 ]
 
 

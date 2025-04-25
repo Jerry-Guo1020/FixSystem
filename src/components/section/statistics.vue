@@ -37,8 +37,8 @@
 
 <style>
 .body {
-    margin: 0;
-    padding: 0;
+    margin: 0;      /*外边框，背景影响完全不会被填充*/
+    padding: 0;     /*内边框，背景影响会被填充*/
 }
 
 .box{
@@ -48,7 +48,7 @@
 .box1 {
     background-color: #5F96AA;
     display: flex;
-    flex-direction: column; /* 改为纵向排列 */
+    flex-direction: column;     /* 改为纵向排列 */
     height: 150px;
     width: 250px;
     margin: 15px;
