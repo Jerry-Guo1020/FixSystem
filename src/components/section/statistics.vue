@@ -1,5 +1,5 @@
 <template>
-    <h1>统计分析</h1>
+    <h2>统计分析</h2>
     <div class="all">
         <div class="box">
             <div class="box1">
@@ -85,16 +85,21 @@ const maxValue = computed(() => {
 <style>
 .body {
     margin: 0;
-    /*外边框，背景影响完全不会被填充*/
     padding: 0;
-    /*内边框，背景影响会被填充*/
 }
+
 .all {
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 让所有内容居中，包括box和chart */
 }
 
 .box {
-    display: inline-flex;
+    display: flex; /* 改为flex */
+    justify-content: center; /* 水平居中 */
+    width: 100%; /* 占满父容器宽度 */
+    margin-bottom: 30px; /* 与下方内容拉开距离 */
 }
 
 .box1 {
@@ -132,7 +137,7 @@ const maxValue = computed(() => {
 }
 
 .box1:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px);     /* 向上移动5像素 */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -151,7 +156,7 @@ const maxValue = computed(() => {
     background-color: white;
     padding: 20px;
     margin: 15px;
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;

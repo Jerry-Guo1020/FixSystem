@@ -68,8 +68,8 @@ const menu = [
   { label: '宿舍楼管理', key: 'dormitories', icon: 'fa fa-building' ,path :'/Dormitory' },
   { label: '维修类别管理', key: 'categories', icon: 'fa fa-list' ,path : '/fixSortManagement'},
   { label: '维修管理', key: 'repairs', icon: 'fa fa-tools' ,path : '/fixManagement'},
-  { label: '接单管理', key: 'orders', icon: 'fa fa-clipboard' ,path : '/fixSortManagement'},
-  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' ,path : '/orderManagement'},
+  { label: '接单管理', key: 'orders', icon: 'fa fa-clipboard' ,path : '/orderManagement'},
+  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' ,path : '/speakingManagement'},
   { label: '公告管理', key: 'announcements', icon: 'fa fa-bullhorn' ,path : '/notionManagement'},
   { label: '管理员管理', key: 'admins', icon: 'fa fa-users' ,path : '/AdminManagement'},
 ]
@@ -111,6 +111,7 @@ const menu = [
   background-color: cornflowerblue;
   height: 100%;
   overflow-y: auto;
+  
 }
 
 .menu-item {
@@ -135,6 +136,7 @@ const menu = [
 .menu-more {
   position: relative;
   padding: 0 15px;
+  text-align: center;
 }
 
 .sub-menu {
@@ -171,8 +173,8 @@ const menu = [
   background: #f0f2f5;
 }
 
-.title {
-  font-size: 20px;
+ .title {
+  font-size: 30px;
   margin: 0;
 }
 </style>

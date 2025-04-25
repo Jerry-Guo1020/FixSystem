@@ -16,78 +16,82 @@ import speakingManagement from "./components/section/speakingManagement.vue";
 
 
 const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: Home,
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: Login,
-  },
-  {
-    path: "/section",
-    name: "section",
-    component: Section,
-    children: [
-      {
-        path: "/Statistics",
-        name: "statistics",
-        component: Statistics,
-      },
-      {
-        path: "/studentmanagement",
-        name: "studentManagement",
-        component: StudentManagement,
-      },
-      {
-        path: "/fixPersonnelManagement",
-        name: "fixPersonnelManagement",
-        component: fixPersonnelManagement,
-      },
-      {
-        path: "/Dormitory",
-        name: "Dormitory",
-        component: Dormitory,
-      },
-      {
-        path: "/fixManagement",
-        name: "fixManagement",
-        component: fixManagement,
-      },
-      {
-        path: "/fixSortManagement",
-        name: "fixSortManagement",
-        component: fixSortManagement,
-      },
-      {
-        path: "/notionManagement",
-        name: "notionManagement",
-        component: notionManagement,
-      },
-      {
-        path: "/orderManagement",
-        name: "orderManagement",
-        component: orderManagement,
-      },
-      {
-        path: "/speakingManagement",
-        name: "speakingManagement",
-        component: speakingManagement,
-      },
-      {
-        path: "/AdminManagement",
-        name: "AdminManagement",
-        component: AdminManagement,
-      },
-    ],
-  },
+    {
+        path: "/",
+        name: "home",
+        component: Home,
+    },
+    {
+        path: "/login",
+        name: "login",
+        component: Login,
+    },
+    {
+        path: "/section",
+        name: "section",
+        component: Section,
+        children: [
+            {
+                path: '', // 默认子路由
+                redirect: 'Statistics'
+            },
+            {
+                path: "/Statistics",
+                name: "statistics",
+                component: Statistics,
+            },
+            {
+                path: "/studentmanagement",
+                name: "studentManagement",
+                component: StudentManagement,
+            },
+            {
+                path: "/fixPersonnelManagement",
+                name: "fixPersonnelManagement",
+                component: fixPersonnelManagement,
+            },
+            {
+                path: "/Dormitory",
+                name: "Dormitory",
+                component: Dormitory,
+            },
+            {
+                path: "/fixManagement",
+                name: "fixManagement",
+                component: fixManagement,
+            },
+            {
+                path: "/fixSortManagement",
+                name: "fixSortManagement",
+                component: fixSortManagement,
+            },
+            {
+                path: "/notionManagement",
+                name: "notionManagement",
+                component: notionManagement,
+            },
+            {
+                path: "/orderManagement",
+                name: "orderManagement",
+                component: orderManagement,
+            },
+            {
+                path: "/speakingManagement",
+                name: "speakingManagement",
+                component: speakingManagement,
+            },
+            {
+                path: "/AdminManagement",
+                name: "AdminManagement",
+                component: AdminManagement,
+            },
+        ],
+    },
 ];
 
 const router = createRouter({
-  history: createMemoryHistory(),
-  routes,
+    history: createMemoryHistory(),
+    routes,
 });
 
 export default router;
