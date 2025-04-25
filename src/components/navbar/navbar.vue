@@ -3,15 +3,12 @@
     <div class="navbar">
       <h2 class="title">大学保修管理系统</h2>
       <div class="menu-container">
-        <div v-for="item in more" :key="item.key" class="menu-more">
+        <!-- 更多菜单显示 -->
+        <div v-for="item in more" :key="item.key" class="menu-more">     
           {{ item.label }}
           <div v-if="item.children" class="sub-menu">
-            <div 
-              v-for="child in item.children" 
-              :key="child.label" 
-              class="sub-menu-item"
-              @click="handleMoreClick(child.label)"
-            >
+            <!-- //更多菜单的子菜单点击事件 -->
+            <div v-for="child in item.children" :key="child.label" class="sub-menu-item"@click="toLoginClick(child.path)">    
               {{ child.label }}
             </div>
           </div>
@@ -19,16 +16,19 @@
       </div>
     </div>
 
-    <div class="content-container">
+    <!-- //左侧菜单 -->
+    <div class="content-container">      
       <div class="side-menu">
         <div v-for="item in menu" :key="item.key" class="menu-item">
           {{ item.label }}
         </div>
       </div>
 
-      <main class="main-content">
+      <!-- //路由出口，右边部分的展示区用路由实现 -->
+      <main class="main-content">     
         <router-view />
       </main>
+      
     </div>
   </div>
 </template>
@@ -47,10 +47,15 @@ const more = [
     key: 'projects',
     children: [
       { label: '账号设置' },
-      { label: '退出登录' }
+      { label: '退出登录' , path :'/login' }
     ],
   },
 ]
+
+//在更多菜单里面的退出登录的一个点击事件，然后
+const toLoginClick = (path) => {
+  router.push(path);
+}
 
 const menu = [
   { label: '统计分析', key: 'statistics', icon: '<BadgeCheck /> ', path : '/'},
@@ -70,10 +75,10 @@ const menu = [
 
 <style>
 .app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow: hidden;
+  display: flex;              /*弹性布局排列*/
+  flex-direction: column;     /*规定了弹性容器的主轴方向为竖直方向，因此竖直导航栏和横向导航栏会这么摆放是通过这个效果 */
+  min-height: 100vh;          /*设置容器的最小高度视口，页面可视区域的高度能够至少占领整一个容器 */
+  overflow: hidden;           /*当子元素的总高度或者是宽度已经超出了整个容器的一个高度宽度，超出的部分会被自动隐藏 */
 }
 
 .navbar {
