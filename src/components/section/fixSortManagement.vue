@@ -1,8 +1,8 @@
 <template>
     <div>
         <h2>维修类别管理</h2>
-        <input placeholder="请输入类别" class="search-dock">
-        <button class="search-button">查询</button>
+        <input placeholder="请输入类别" class="search-dock" v-model="searchText">
+        <button class="search-button" @click="handleSearch">查询</button>
         <button class="search-button">添加</button>
     </div>
     <main class="container-dormitory">
@@ -39,7 +39,6 @@
 <script setup>
 import { computed, ref } from 'vue';
 
-
 const fixSort = ref([
     { sort: "空调", beizhu: "空调不制冷", createTime: "2025-03-01" },
     { sort: "水管", beizhu: "水管漏水", createTime: "2025-03-02" },
@@ -58,20 +57,32 @@ const fixSort = ref([
     { sort: "门铃", beizhu: "门铃不响", createTime: "2025-03-15" }
 ]);
 
-// 定义一页显示10个数据
+const searchText = ref('');
+const filteredFixSort = ref([...fixSort.value]);
+
+function handleSearch() {
+    const keyword = searchText.value.trim();
+    if (keyword === '') {
+        filteredFixSort.value = [...fixSort.value];
+    } else {
+        filteredFixSort.value = fixSort.value.filter(item =>
+            item.sort.includes(keyword)
+        );
+    }
+    currentPage.value = 1; // 查询后回到第一页
+}
+
+// 分页相关
 const pageSize = 10;
+const currentPage = ref(1);
 
-// 定义当前页的变量，然后初始值为1
-const currentPage = ref(1)
-
-const allpage = computed(() => Math.ceil(fixSort.value.length / pageSize));     /*定义一个allpage，然后后面不会，大概的公式应该是算出所有的内容能够有多少页*/
+const allpage = computed(() => Math.ceil(filteredFixSort.value.length / pageSize));
 
 const pageFixSort = computed(() => {
     const start = (currentPage.value - 1) * pageSize;
-    return fixSort.value.slice(start, start + pageSize);
-})
+    return filteredFixSort.value.slice(start, start + pageSize);
+});
 
-// 构建翻页的函数，同时判断首页和尾页的禁用的按钮
 function prevpage() {
     if (currentPage.value > 1) {
         currentPage.value--;
@@ -82,8 +93,6 @@ function nextpage() {
         currentPage.value++;
     }
 }
-
-
 
 </script>
 
