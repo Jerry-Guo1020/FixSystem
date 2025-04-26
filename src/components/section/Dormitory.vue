@@ -120,8 +120,4 @@ function nextpage(){
     text-align: center;
 }
 
-.search-section{
-   
-    
-}
 </style>
