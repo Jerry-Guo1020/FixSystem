@@ -1,12 +1,12 @@
 <template>
-<div>
+<div class="search-section">
     <h2>宿舍楼管理</h2>
-        <input placeholder="请输入宿舍楼名">
-        <button>查询</button>
-        <button>添加</button>
+        <input placeholder="请输入宿舍楼名" class="search-dock">
+        <button class="search-button">查询</button>
+        <button class="search-button">添加</button>
 </div>
 <main class="container-dormitory">
-    <table>
+    <table class="student-table">
         <thead>
             <tr>
                 <th>宿舍楼名字</th>
@@ -23,17 +23,17 @@
                 <td>{{ dormitory.leaderName }}</td>
                 <td>{{ dormitory.createTime }}</td>
                 <td>
-                    <button>编辑</button>
-                    <button>删除</button>
-                </td>
+                    <button class="edit-button">编辑</button>
+                    <button class="delete-button">删除</button>
+                </td>               
             </tr>
         </tbody>
     </table>
 <!-- 分页按钮区域 -->
  <div class="pagenext">
-    <button class="prevpage" @click="prevpage" :disabled="currentPage === 1">上一页</button>
+    <button class="pageprev-button" @click="prevpage" :disabled="currentPage === 1">上一页</button>
     <span>第{{currentPage}}页 || 共{{ allpage }}页</span>
-    <button class="nextpage" @click="nextpage" :disabled="currentPage === allpage">下一页</button>
+    <button class="pagenext-button" @click="nextpage" :disabled="currentPage === allpage">下一页</button>
  </div>
 </main>
 </template>
@@ -118,5 +118,10 @@ function nextpage(){
 
 .tbody {
     text-align: center;
+}
+
+.search-section{
+   
+    
 }
 </style>
