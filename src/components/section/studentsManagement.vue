@@ -50,7 +50,7 @@ import { ref, computed } from 'vue';
 
 const pageSize = 10;     /*定义一页显示十个内容 */
 const currentPage = ref(1);     /* 定义初始的页码，不会 ref(1)*/
-const allpage = computed(() => Math.ceil(students.value.length / pageSize));     /*定义一个allpage，然后后面不会*/
+const allpage = computed(() => Math.ceil(students.value.length / pageSize));     /*定义一个allpage，然后后面不会，大概的公式应该是算出所有的内容能够有多少页*/
 
 /* 定义一个pagedStudents，然后后面不会 */
 const pagedStudents = computed(() => {
