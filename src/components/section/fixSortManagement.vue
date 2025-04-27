@@ -59,7 +59,8 @@ const fixSort = ref([
 
 //搜索栏搜索功能
 const searchText = ref('');
-const filteredFixSort = ref([...fixSort.value]);     /* 定义filteredFixSort 为输入框输入然后进行搜索的结果 ，然后初始值就是展示全部的内容，通过 “...”来进行复制原本内容*/
+/* 定义filteredFixSort 为输入框输入然后进行搜索的结果 ，然后初始值就是展示全部的内容，通过 “...”来进行复制原本内容*/
+const filteredFixSort = ref([...fixSort.value]);     
 
 // 输入内容然后点击查询按钮的结果输出的函数实现
 function handleSearch() {
