@@ -79,8 +79,8 @@ function handleSearch() {
 // 分页相关
 const pageSize = 10;
 const currentPage = ref(1);
-
-const allpage = computed(() => Math.ceil(filteredFixSort.value.length / pageSize));
+/*使用箭头函数，然后通过math函数公式求出总页数 */
+const allpage = computed(() => Math.ceil(filteredFixSort.value.length / pageSize));     
 
 const pageFixSort = computed(() => {
     const start = (currentPage.value - 1) * pageSize;

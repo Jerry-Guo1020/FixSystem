@@ -1,6 +1,6 @@
 /*现在这一个部分遇到了一个问题：我首先在表格是弄了一个容器，然后通过这个容器来装里面的数据，但是 */
 <template>
-    
+
     <div class="search-section">
         <h2>学生管理</h2>
         <input placeholder="请输入手机号" class="search-dock">
@@ -28,7 +28,7 @@
                     <td>{{ student.dorm }}</td>
                     <td>
                         <button class="edit-button" @click="openDialog">编辑</button>
-                        <button class="delete-button"  @click="openDialog">删除</button>
+                        <button class="delete-button" @click="openDialog">删除</button>
                     </td>
                 </tr>
             </tbody>
@@ -43,20 +43,13 @@
             <button class="pagenext-button" @click="nextpage" :disabled="currentPage === allpage">下一页</button>
         </div>
         <!-- 弹窗部分，添加动画 -->
-        <transition name="popup-fade">
-            <div v-if="showDialog" class="popup-mask">
-                <div class="popup-card">
-                    <div class="popup-title">提示</div>
-                    <div class="popup-content">此功能正在开发中<br>敬请期待…</div>
-                    <button class="popup-button" @click="closeDialog">确定</button>
-                </div>
-            </div>
-        </transition>
+        <AlertDialog :show="showDialog" title="提示" content="此功能正在开发中敬请期待…" @close="closeDialog" />
     </main>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
+import AlertDialog from '../common/AlertDialog.vue'; // 引入弹窗组件
 
 const pageSize = 10;     /*定义一页显示十个内容 */
 const currentPage = ref(1);     /* 定义初始的页码，不会 ref(1)*/
@@ -120,6 +113,7 @@ function closeDialog() {
     showDialog.value = false;
 }
 
+
 </script>
 
 <style>
@@ -127,7 +121,7 @@ function closeDialog() {
     margin: 10px;
     width: 50px;
     height: 30px;
-    display:flex;
+    display: flex;
     margin-bottom: 20px;
 }
 
@@ -222,12 +216,12 @@ function closeDialog() {
     cursor: pointer;
 }
 
- .pagenext {
+.pagenext {
     text-align: center;
     padding: 5px;
 }
 
-.pageprev-button{
+.pageprev-button {
     background-color: dodgerblue;
     color: white;
     border: none;
@@ -236,23 +230,28 @@ function closeDialog() {
     margin-right: 20px;
 }
 
-.pagenext-button{
+.pagenext-button {
     background-color: dodgerblue;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px ;
+    padding: 5px 10px;
     margin-right: 20px;
     margin-left: 20px;
 }
 
 .popup-mask {
     position: fixed;
-    left: 0; /* 距离左侧的距离 */
-    top: 0; /* 距离顶部的距离 */
-    right: 0; /* 距离右侧的距离 */
-    bottom: 0; /* 距离底部的距离 */
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明的黑色背景 */
+    left: 0;
+    /* 距离左侧的距离 */
+    top: 0;
+    /* 距离顶部的距离 */
+    right: 0;
+    /* 距离右侧的距离 */
+    bottom: 0;
+    /* 距离底部的距离 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明的黑色背景 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -272,7 +271,7 @@ function closeDialog() {
 .popup-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 .popup-content {
@@ -280,12 +279,12 @@ function closeDialog() {
     margin-bottom: 20px;
 }
 
-.popup-button{
+.popup-button {
     background-color: dodgerblue;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px ;
+    padding: 5px 10px;
     margin-right: 20px;
     margin-left: 20px;
     width: 80px;
@@ -293,14 +292,19 @@ function closeDialog() {
 }
 
 /* 弹窗动画样式ai */
-.popup-fade-enter-active, .popup-fade-leave-active {
-    transition: opacity 0.3s cubic-bezier(.55,0,.1,1), transform 0.3s cubic-bezier(.55,0,.1,1);
+.popup-fade-enter-active,
+.popup-fade-leave-active {
+    transition: opacity 0.3s cubic-bezier(.55, 0, .1, 1), transform 0.3s cubic-bezier(.55, 0, .1, 1);
 }
-.popup-fade-enter-from, .popup-fade-leave-to {
+
+.popup-fade-enter-from,
+.popup-fade-leave-to {
     opacity: 0;
     transform: scale(0.9);
 }
-.popup-fade-enter-to, .popup-fade-leave-from {
+
+.popup-fade-enter-to,
+.popup-fade-leave-from {
     opacity: 1;
     transform: scale(1);
 }
