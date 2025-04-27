@@ -1,8 +1,8 @@
 <template>
 <div class="search-section">
     <h2>宿舍楼管理</h2>
-        <input placeholder="请输入宿舍楼名" class="search-dock">
-        <button class="search-button">查询</button>
+        <input placeholder="请输入宿舍楼名" class="search-dock" v-model="searchText">
+        <button class="search-button" @click="handleSearch">查询</button>
         <button class="search-button">添加</button>
 </div>
 <main class="container-dormitory">
@@ -80,17 +80,29 @@ const dormitory = ref([
     {name:"II栋", location:"II135", leaderName:"小宇", createTime:"2024-06-04"}
 ]);
 
-// 定义一页显示10个数据
-const pageSize = 10;
+//搜索栏搜索功能
+const searchText = ref ('');
+const findSearchText = ref([...dormitory.value]);
 
-// 定义当前页的变量，然后初始值为1
-const currentPage = ref(1)
+function handleSearch(){
+    // 定义搜索结果，然后这个结果来自搜索框输入的内容，从搜索框输入这里获取得到
+    const handle = searchText.value.trim();
+    if (handle === "") {
+        findSearchText.value = [...dormitory.value];
+    }else {
+        findSearchText.value = dormitory.value.filter(item => item.name.includes(handle));
+    }
+    currentPage.value = 1;
+}
 
-const allpage = computed(() => Math.ceil(dormitory.value.length / pageSize));     /*定义一个allpage，然后后面不会，大概的公式应该是算出所有的内容能够有多少页*/
 
+// 分页功能，注意：这个分页功能要和搜索框的搜索功能结合起来使用
+const pageSize = 10;     // 定义一页显示10个数据
+const currentPage = ref(1)     // 定义当前页的变量，然后初始值为1
+const allpage = computed(() => Math.ceil(findSearchText.value.length / pageSize));     /*定义一个allpage，然后后面不会，大概的公式应该是算出所有的内容能够有多少页*/
 const pageDormitory = computed(() => {
     const start = (currentPage.value - 1) * pageSize;
-    return dormitory.value.slice(start, start + pageSize); 
+    return findSearchText.value.slice(start, start + pageSize); 
 })
 
 // 构建翻页的函数，同时判断首页和尾页的禁用的按钮

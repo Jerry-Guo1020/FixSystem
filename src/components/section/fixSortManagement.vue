@@ -22,7 +22,7 @@
                     <td>{{ fixSort.createTime }}</td>
                     <td>
                         <button class="edit-button" @click="openDialog">编辑</button>
-                        <button class="delete-button"  @click="openDialog">删除</button>
+                        <button class="delete-button" @click="openDialog">删除</button>
                     </td>
                 </tr>
             </tbody>
@@ -57,19 +57,22 @@ const fixSort = ref([
     { sort: "门铃", beizhu: "门铃不响", createTime: "2025-03-15" }
 ]);
 
+//搜索栏搜索功能
 const searchText = ref('');
-const filteredFixSort = ref([...fixSort.value]);
+const filteredFixSort = ref([...fixSort.value]);     /* 定义filteredFixSort 为输入框输入然后进行搜索的结果 ，然后初始值就是展示全部的内容，通过 “...”来进行复制原本内容*/
 
+// 输入内容然后点击查询按钮的结果输出的函数实现
 function handleSearch() {
+    /*定义keyword，然后获取搜索栏输入的内容信息searchText.value， trim()方法的作用是默认去除用户输入内容中的两端的空格，这样就会可以去查询内容不会收到影响 */
     const keyword = searchText.value.trim();
+    /*if语句条件，如果搜索栏为空的话，那么 ...fixSort.value 全部都展示出来（正常情况） */
     if (keyword === '') {
         filteredFixSort.value = [...fixSort.value];
     } else {
-        filteredFixSort.value = fixSort.value.filter(item =>
-            item.sort.includes(keyword)
-        );
+        /*否则的话， 通过filter()方法进行搜索，通过includes()方法进行判断搜索栏输入的内容是否包含在fixSort.value中， 如果包含的话，就展示出来 */
+        filteredFixSort.value = fixSort.value.filter(item =>item.sort.includes(keyword));
     }
-    currentPage.value = 1; // 查询后回到第一页
+    currentPage.value = 1;
 }
 
 // 分页相关
