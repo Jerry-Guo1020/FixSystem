@@ -66,7 +66,8 @@ defineProps({
   height: 30px;
 }
 .popup-fade-enter-active, .popup-fade-leave-active {
-  transition: opacity 0.3s cubic-bezier(.55,0,.1,1), transform 0.3s cubic-bezier(.55,0,.1,1);
+  transition: opacity 0.5s cubic-bezier(.55,0,.1,1), 
+  transform 0.3s cubic-bezier(.55,0,.1,1);
 }
 .popup-fade-enter-from, .popup-fade-leave-to {
   opacity: 0;

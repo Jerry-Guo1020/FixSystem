@@ -1,17 +1,17 @@
 import { createRouter, createMemoryHistory } from "vue-router";
 import Home from "./Home/Home.vue";
 import Login from "./components/Login/Login.vue";
-import Section from "./components/navbar/navbar.vue";
-import Statistics from "./components/section/statistics.vue";
-import StudentManagement from "./components/section/studentsManagement.vue";
-import fixPersonnelManagement from "./components/section/fixPersonnelManagement.vue";
-import Dormitory from "./components/section/Dormitory.vue";
-import AdminManagement from "./components/section/AdminManagement.vue";
-import fixManagement from "./components/section/fixManagement.vue";
-import fixSortManagement from "./components/section/fixSortManagement.vue";
-import notionManagement from "./components/section/notionManagement.vue";
-import orderManagement from "./components/section/orderManagement.vue";
-import speakingManagement from "./components/section/speakingManagement.vue";
+import adminNavbar from "./components/navbar/adminNavbar.vue";
+import Statistics from "./components/adminSection/statistics.vue";
+import StudentManagement from "./components/adminSection/studentsManagement.vue";
+import fixPersonnelManagement from "./components/adminSection/fixPersonnelManagement.vue";
+import Dormitory from "./components/adminSection/Dormitory.vue";
+import AdminManagement from "./components/adminSection/AdminManagement.vue";
+import fixManagement from "./components/adminSection/fixManagement.vue";
+import fixSortManagement from "./components/adminSection/fixSortManagement.vue";
+import notionManagement from "./components/adminSection/notionManagement.vue";
+import orderManagement from "./components/adminSection/orderManagement.vue";
+import speakingManagement from "./components/adminSection/speakingManagement.vue";
 
 
 
@@ -27,9 +27,9 @@ const routes = [
         component: Login,
     },
     {
-        path: "/section",
-        name: "section",
-        component: Section,
+        path: "/adminNavbar",
+        name: "adminNavbar",
+        component: adminNavbar,
         children: [
             {
                 path: '', // 默认子路由
