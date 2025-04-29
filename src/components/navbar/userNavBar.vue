@@ -24,11 +24,13 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-const router = useRouter
-
-const menu = (ref[
-    {label:"" , path :""},
-])
+const router = useRouter();
+const menu = [
+    {label:"维修管理" , path :"/FixManagement"},
+    {label:"下单管理" , path :"/olderManagement"},
+    {label:"评论区" , path :"/speakingManagement"},
+    {label:"公告栏" , path :"/notionManagement"}
+];
 </script>
 
 <style>

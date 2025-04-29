@@ -12,6 +12,12 @@ import fixSortManagement from "./components/adminSection/fixSortManagement.vue";
 import notionManagement from "./components/adminSection/notionManagement.vue";
 import orderManagement from "./components/adminSection/orderManagement.vue";
 import speakingManagement from "./components/adminSection/speakingManagement.vue";
+import UserNavBar from "./components/navbar/userNavBar.vue";
+import FixManagement from "./components/uesrSection/fixManagement.vue";
+import NotionManagement from "./components/uesrSection/notionManagement.vue"
+import OrderManagement from "./components/uesrSection/orderManagement.vue"
+import SpeakingManagement from "./components/uesrSection/speakingManagement.vue"
+
 
 const routes = [
     {
@@ -66,24 +72,56 @@ const routes = [
             {
                 path: "/notionManagement",
                 name: "notionManagement",
-                component: notionManagement,
+                component: NotionManagement,
             },
             {
                 path: "/orderManagement",
                 name: "orderManagement",
-                component: orderManagement,
+                component: OrderManagement,
             },
             {
                 path: "/speakingManagement",
                 name: "speakingManagement",
-                component: speakingManagement,
+                component: SpeakingManagement,
             },
             {
                 path: "/AdminManagement",
                 name: "AdminManagement",
                 component: AdminManagement,
-            },
+            }
         ],
+    },
+    {
+        path: "/usernavbar",
+        name: "userNavbar",
+        component: UserNavBar,
+        children: [
+                // {
+                //     path:"/",
+                //     component:
+                // },
+                {
+                    path : "/userfixManagement",
+                    name : "userfixManagement",
+                    component :FixManagement
+                },
+                {
+                    path : "/notionManagement",
+                    name : "notionManagement",
+                    component : notionManagement
+                },
+                {
+                    path : "/orderManagement",
+                    name : "orderManagement",
+                    component :orderManagement
+                },
+                {
+                    path : "/speakingManagement",
+                    name : "speakingManagement",
+                    component : speakingManagement
+                },
+
+        ]
     },
 ];
 
