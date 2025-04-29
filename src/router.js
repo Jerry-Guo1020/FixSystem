@@ -13,8 +13,6 @@ import notionManagement from "./components/adminSection/notionManagement.vue";
 import orderManagement from "./components/adminSection/orderManagement.vue";
 import speakingManagement from "./components/adminSection/speakingManagement.vue";
 
-
-
 const routes = [
     {
         path: "/",
