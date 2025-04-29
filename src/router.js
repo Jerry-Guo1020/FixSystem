@@ -9,14 +9,14 @@ import Dormitory from "./components/adminSection/Dormitory.vue";
 import AdminManagement from "./components/adminSection/AdminManagement.vue";
 import fixManagement from "./components/adminSection/fixManagement.vue";
 import fixSortManagement from "./components/adminSection/fixSortManagement.vue";
-import notionManagement from "./components/adminSection/notionManagement.vue";
-import orderManagement from "./components/adminSection/orderManagement.vue";
-import speakingManagement from "./components/adminSection/speakingManagement.vue";
+import NotionManagement from "./components/adminSection/notionManagement.vue";
+import OrderManagement from "./components/adminSection/orderManagement.vue";
+import SpeakingManagement from "./components/adminSection/speakingManagement.vue";
 import UserNavBar from "./components/navbar/userNavBar.vue";
-import FixManagement from "./components/uesrSection/fixManagement.vue";
-import NotionManagement from "./components/uesrSection/notionManagement.vue"
-import OrderManagement from "./components/uesrSection/orderManagement.vue"
-import SpeakingManagement from "./components/uesrSection/speakingManagement.vue"
+import userFixManagement from "./components/uesrSection/fixManagement.vue";
+import userNotionManagement from "./components/uesrSection/notionManagement.vue"
+import userOrderManagement from "./components/uesrSection/orderManagement.vue"
+import userSpeakingManagement from "./components/uesrSection/speakingManagement.vue"
 
 
 const routes = [
@@ -96,31 +96,26 @@ const routes = [
         name: "userNavbar",
         component: UserNavBar,
         children: [
-                // {
-                //     path:"/",
-                //     component:
-                // },
-                {
-                    path : "/userfixManagement",
-                    name : "userfixManagement",
-                    component :FixManagement
-                },
-                {
-                    path : "/notionManagement",
-                    name : "notionManagement",
-                    component : notionManagement
-                },
-                {
-                    path : "/orderManagement",
-                    name : "orderManagement",
-                    component :orderManagement
-                },
-                {
-                    path : "/speakingManagement",
-                    name : "speakingManagement",
-                    component : speakingManagement
-                },
-
+            {
+                path: "userfixManagement",
+                name: "userfixManagement",
+                component: userFixManagement
+            },
+            {
+                path: "userorderManagement",
+                name: "userorderManagement",
+                component: userOrderManagement
+            },
+            {
+                path: "speakingManagement",
+                name: "speakingManagement",
+                component: userSpeakingManagement
+            },
+            {
+                path: "notionManagement",
+                name: "userNotionManagement",
+                component: userNotionManagement
+            }
         ]
     },
 ];

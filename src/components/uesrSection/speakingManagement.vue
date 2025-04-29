@@ -1,5 +1,5 @@
 <template>
-    <h1>jasfiskj</h1>
+    <h2>评论区  </h2>
     </template>
     
     <script setup>

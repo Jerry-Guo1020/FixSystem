@@ -1,5 +1,7 @@
 <template>
-    <h1>jasfiskj</h1>
+    <div class="user-fix">
+        <h2>维修管理</h2>
+    </div>
     </template>
     
     <script setup>
