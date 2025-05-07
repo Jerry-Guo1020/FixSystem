@@ -1,4 +1,4 @@
-import { createRouter, createMemoryHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "./Home/Home.vue";
 import Login from "./components/Login/Login.vue";
 import adminNavbar from "./components/navbar/adminNavbar.vue";
@@ -17,6 +17,7 @@ import userFixManagement from "./components/uesrSection/fixManagement.vue";
 import userNotionManagement from "./components/uesrSection/notionManagement.vue"
 import userOrderManagement from "./components/uesrSection/orderManagement.vue"
 import userSpeakingManagement from "./components/uesrSection/speakingManagement.vue"
+import UserHome from "./Home/userHome.vue";
 
 
 const routes = [
@@ -97,6 +98,15 @@ const routes = [
         component: UserNavBar,
         children: [
             {
+              path: '', // 默认子路由
+              redirect: 'UserHome'
+            },
+            {
+                path: "userHome",
+                name: "userHome",
+                component: UserHome
+            },
+            {
                 path: "userfixManagement",
                 name: "userfixManagement",
                 component: userFixManagement
@@ -121,7 +131,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
 });
 
