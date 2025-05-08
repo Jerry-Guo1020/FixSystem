@@ -2,16 +2,16 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "./Home/Home.vue";
 import Login from "./components/Login/Login.vue";
 import adminNavbar from "./components/navbar/adminNavbar.vue";
-import Statistics from "./components/adminSection/statistics.vue";
-import StudentManagement from "./components/adminSection/studentsManagement.vue";
-import fixPersonnelManagement from "./components/adminSection/fixPersonnelManagement.vue";
-import Dormitory from "./components/adminSection/Dormitory.vue";
+import AdminStatistics from "./components/adminSection/statistics.vue";
+import AdminStudentManagement from "./components/adminSection/studentsManagement.vue";
+import AdminfixPersonnelManagement from "./components/adminSection/fixPersonnelManagement.vue";
+import AdminDormitory from "./components/adminSection/Dormitory.vue";
 import AdminManagement from "./components/adminSection/AdminManagement.vue";
-import fixManagement from "./components/adminSection/fixManagement.vue";
-import fixSortManagement from "./components/adminSection/fixSortManagement.vue";
-import NotionManagement from "./components/adminSection/notionManagement.vue";
-import OrderManagement from "./components/adminSection/orderManagement.vue";
-import SpeakingManagement from "./components/adminSection/speakingManagement.vue";
+import AdminfixManagement from "./components/adminSection/fixManagement.vue";
+import AdminfixSortManagement from "./components/adminSection/fixSortManagement.vue";
+import AdminNotionManagement from "./components/adminSection/notionManagement.vue";
+import AdminOrderManagement from "./components/adminSection/orderManagement.vue";
+import AdminSpeakingManagement from "./components/adminSection/speakingManagement.vue";
 import UserNavBar from "./components/navbar/userNavBar.vue";
 import UserFixManagement from "./components/uesrSection/fixManagement.vue";
 import UserNotionManagement from "./components/uesrSection/notionManagement.vue"
@@ -38,52 +38,52 @@ const routes = [
         children: [
             {
                 path: '', // 默认子路由
-                redirect: 'Statistics'
+                redirect: 'AdminStatistics'
             },
             {
-                path: "/Statistics",
+                path: "/AdminStatistics",
                 name: "statistics",
-                component: Statistics,
+                component: AdminStatistics,
             },
             {
-                path: "/studentmanagement",
+                path: "/Adminstudentmanagement",
                 name: "studentManagement",
-                component: StudentManagement,
+                component: AdminStudentManagement,
             },
             {
-                path: "/fixPersonnelManagement",
+                path: "/AdminfixPersonnelManagement",
                 name: "fixPersonnelManagement",
-                component: fixPersonnelManagement,
+                component: AdminfixPersonnelManagement,
             },
             {
-                path: "/Dormitory",
+                path: "/AdminDormitory",
                 name: "Dormitory",
-                component: Dormitory,
+                component: AdminDormitory,
             },
             {
-                path: "/fixManagement",
+                path: "/AdminfixManagement",
                 name: "fixManagement",
-                component: fixManagement,
+                component: AdminfixManagement,
             },
             {
-                path: "/fixSortManagement",
+                path: "/AdminfixSortManagement",
                 name: "fixSortManagement",
-                component: fixSortManagement,
+                component: AdminfixSortManagement,
             },
             {
-                path: "/notionManagement",
+                path: "/AdminnotionManagement",
                 name: "notionManagement",
-                component: NotionManagement,
+                component: AdminNotionManagement,
             },
             {
-                path: "/orderManagement",
+                path: "/AdminorderManagement",
                 name: "orderManagement",
-                component: OrderManagement,
+                component: AdminOrderManagement,
             },
             {
-                path: "/speakingManagement",
+                path: "/AdminspeakingManagement",
                 name: "speakingManagement",
-                component: SpeakingManagement,
+                component: AdminSpeakingManagement,
             },
             {
                 path: "/AdminManagement",

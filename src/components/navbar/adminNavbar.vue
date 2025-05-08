@@ -62,15 +62,15 @@ const toSectionClick = (path) => {
 }
 
 const menu = [
-  { label: '统计分析', key: 'statistics', icon: '<BadgeCheck /> ', path : '/Statistics'},
-  { label: '学生管理', key: 'students', icon: 'fa fa-user' , path : '/studentmanagement'},
-  { label: '维修人员管理', key: 'repairmen', icon: 'fa fa-wrench', path :'/fixPersonnelManagement' },
-  { label: '宿舍楼管理', key: 'dormitories', icon: 'fa fa-building' ,path :'/Dormitory' },
-  { label: '维修类别管理', key: 'categories', icon: 'fa fa-list' ,path : '/fixSortManagement'},
-  { label: '维修管理', key: 'repairs', icon: 'fa fa-tools' ,path : '/fixManagement'},
-  { label: '接单管理', key: 'orders', icon: 'fa fa-clipboard' ,path : '/orderManagement'},
-  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' ,path : '/speakingManagement'},
-  { label: '公告管理', key: 'announcements', icon: 'fa fa-bullhorn' ,path : '/notionManagement'},
+  { label: '统计分析', key: 'statistics', icon: '<BadgeCheck /> ', path : '/AdminStatistics'},
+  { label: '学生管理', key: 'students', icon: 'fa fa-user' , path : '/Adminstudentmanagement'},
+  { label: '维修人员管理', key: 'repairmen', icon: 'fa fa-wrench', path :'/AdminfixPersonnelManagement' },
+  { label: '宿舍楼管理', key: 'dormitories', icon: 'fa fa-building' ,path :'/AdminDormitory' },
+  { label: '维修类别管理', key: 'categories', icon: 'fa fa-list' ,path : '/AdminfixSortManagement'},
+  { label: '维修管理', key: 'repairs', icon: 'fa fa-tools' ,path : '/AdminfixManagement'},
+  { label: '接单管理', key: 'orders', icon: 'fa fa-clipboard' ,path : '/AdminorderManagement'},
+  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' ,path : "/AdminspeakingManagement"},
+  { label: '公告管理', key: 'announcements', icon: 'fa fa-bullhorn' ,path : '/AdminnotionManagement'},
   { label: '管理员管理', key: 'admins', icon: 'fa fa-users' ,path : '/AdminManagement'},
 ]
 

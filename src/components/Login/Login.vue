@@ -22,7 +22,8 @@ import { useRouter } from 'vue-router';
 const router =useRouter();
 
 function gotosection(){
-        router.push("/usernavbar")
+    router.push("/adminnavbar")
+    // router.push("/usernavbar")
 }
 </script>
  <style>
