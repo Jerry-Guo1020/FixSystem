@@ -13,11 +13,11 @@ import NotionManagement from "./components/adminSection/notionManagement.vue";
 import OrderManagement from "./components/adminSection/orderManagement.vue";
 import SpeakingManagement from "./components/adminSection/speakingManagement.vue";
 import UserNavBar from "./components/navbar/userNavBar.vue";
-import userFixManagement from "./components/uesrSection/fixManagement.vue";
-import userNotionManagement from "./components/uesrSection/notionManagement.vue"
-import userOrderManagement from "./components/uesrSection/orderManagement.vue"
-import userSpeakingManagement from "./components/uesrSection/speakingManagement.vue"
-import UserHome from "./Home/userHome.vue";
+import UserFixManagement from "./components/uesrSection/fixManagement.vue";
+import UserNotionManagement from "./components/uesrSection/notionManagement.vue"
+import UserOrderManagement from "./components/uesrSection/orderManagement.vue"
+import UserSpeakingManagement from "./components/uesrSection/speakingManagement.vue"
+
 
 
 const routes = [
@@ -99,32 +99,27 @@ const routes = [
         children: [
             {
               path: '', // 默认子路由
-              redirect: 'UserHome'
+              redirect: 'UserFixManagement'
             },
             {
-                path: "userHome",
-                name: "userHome",
-                component: UserHome
-            },
-            {
-                path: "userfixManagement",
+                path: "/userfixManagement",
                 name: "userfixManagement",
-                component: userFixManagement
+                component: UserFixManagement
             },
             {
-                path: "userorderManagement",
+                path: "/userorderManagement",
                 name: "userorderManagement",
-                component: userOrderManagement
+                component: UserOrderManagement
             },
             {
-                path: "speakingManagement",
+                path: "/speakingManagement",
                 name: "speakingManagement",
-                component: userSpeakingManagement
+                component: UserSpeakingManagement
             },
             {
-                path: "notionManagement",
+                path: "/usernotionManagement",
                 name: "userNotionManagement",
-                component: userNotionManagement
+                component: UserNotionManagement
             }
         ]
     },

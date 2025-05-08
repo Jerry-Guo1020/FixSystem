@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>公告栏</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: #fff;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .notion-list {
+            margin-top: 20px;
+        }
+
+        .notion-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notion-title {
+            font-weight: bold;
+            color: #409eff;
+        }
+
+        .notion-date {
+            color: #888;
+            font-size: 13px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="header">公告栏</h2>
+        <div class="notion-list" id="notionList"></div>
+    </div>
+    <script>
+        // 模拟公告数据
+        const notions = [
+            { title: "系统维护通知", date: "2024-06-01", content: "本系统将于6月2日凌晨维护，请提前保存数据。" },
+            { title: "新功能上线", date: "2024-05-28", content: "评论区功能已上线，欢迎体验。" }
+        ];
+        const list = document.getElementById('notionList');
+        notions.forEach(notion => {
+            const div = document.createElement('div');
+            div.className = 'notion-item';
+            div.innerHTML = `<span class="notion-title">${notion.title}</span>
+                             <span class="notion-date">${notion.date}</span>
+                             <div style="margin-top:8px;">${notion.content}</div>`;
+            list.appendChild(div);
+        });
+    </script>
+</body>
+
+</html>

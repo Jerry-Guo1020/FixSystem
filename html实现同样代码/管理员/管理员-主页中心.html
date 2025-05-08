@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>统计分析</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .all {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .box1 {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .item2 {
+            font-size: 24px;
+            color: #409eff;
+            margin: 10px 0;
+        }
+
+        .item3 {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .chart-container {
+            background: #fff;
+            padding: 20px;
+            margin: 15px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            height: 320px;
+        }
+
+        .chart-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .bar-chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 200px;
+        }
+
+        .chart-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80px;
+        }
+
+        .bar-wrapper {
+            width: 50px;
+            height: 150px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar {
+            width: 100%;
+            background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 4px 4px 0 0;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            transition: height 0.8s;
+        }
+
+        .bar-value {
+            color: white;
+            font-weight: bold;
+            padding-top: 5px;
+        }
+
+        .item-label {
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>统计分析</h2>
+    <div class="all">
+        <div class="box">
+            <div class="box1">
+                <h2>学生数</h2>
+                <div class="item2" id="studentCount">3名</div>
+                <div class="item3">当前注册的学生</div>
+            </div>
+            <div class="box1">
+                <h2>保修数</h2>
+                <div class="item2" id="repairCount">3名</div>
+                <div class="item3">当前注册的学生</div>
+            </div>
+            <div class="box1">
+                <h2>未完成订单</h2>
+                <div class="item2" id="orderCount">1个</div>
+                <div class="item3">当前注册的学生</div>
+            </div>
+            <div class="box1">
+                <h2>评论数</h2>
+                <div class="item2" id="commentCount">1个</div>
+                <div class="item3">当前注册的学生</div>
+            </div>
+        </div>
+        <div class="chart">
+            <div class="chart-container">
+                <h2>各个维修类别的报修数量</h2>
+                <div class="bar-chart" id="barChart"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 模拟数据
+        const chartData = [
+            { label: "水电", value: 8 },
+            { label: "门窗", value: 5 },
+            { label: "家电", value: 3 },
+            { label: "其他", value: 2 }
+        ];
+        // 渲染条形图
+        function renderBarChart() {
+            const max = Math.max(...chartData.map(item => item.value));
+            const chart = document.getElementById('barChart');
+            chart.innerHTML = '';
+            chartData.forEach(item => {
+                const height = (item.value / max) * 150;
+                const chartItem = document.createElement('div');
+                chartItem.className = 'chart-item';
+                chartItem.innerHTML = `
+                    <div class="bar-wrapper">
+                        <div class="bar" style="height:${height}px;">
+                            <span class="bar-value">${item.value}</span>
+                        </div>
+                    </div>
+                    <div class="item-label">${item.label}</div>
+                `;
+                chart.appendChild(chartItem);
+            });
+        }
+        renderBarChart();
+    </script>
+</body>
+
+</html>

@@ -31,10 +31,10 @@ const toSectionClick = (path) => {
 
 // 优化后的 menu 路径，全部加上 /usernavbar/ 前缀，避免与 adminNavBar 冲突
 const menu = [
-    {label:"维修管理" , key:'userfixManagement', path: "/usernavbar/userfixManagement"},
-    {label:"下单管理" , key:'orderManagement', path: "/usernavbar/userorderManagement"},
-    {label:"评论区" , key:'speakingManagement', path: "/usernavbar/speakingManagement"},
-    {label:"公告栏" , key:'notionManagement', path: "/usernavbar/notionManagement"}
+    {label:"维修管理" , key:'userfixManagement', path: "/userfixManagement"},
+    {label:"下单管理" , key:'orderManagement', path: "userorderManagement"},
+    {label:"评论区" , key:'speakingManagement', path: "/speakingManagement"},
+    {label:"公告栏" , key:'notionManagement', path: "/usernotionManagement"}
 ];
 </script>
 
