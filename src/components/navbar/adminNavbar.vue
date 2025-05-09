@@ -69,7 +69,7 @@ const menu = [
   { label: '维修类别管理', key: 'categories', icon: 'fa fa-list' ,path : '/AdminfixSortManagement'},
   { label: '维修管理', key: 'repairs', icon: 'fa fa-tools' ,path : '/AdminfixManagement'},
   { label: '接单管理', key: 'orders', icon: 'fa fa-clipboard' ,path : '/AdminorderManagement'},
-  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' ,path : "/AdminspeakingManagement"},
+  { label: '评论管理', key: 'comments', icon: 'fa fa-comments' ,path : '/AdminspeakingManagement'},
   { label: '公告管理', key: 'announcements', icon: 'fa fa-bullhorn' ,path : '/AdminnotionManagement'},
   { label: '管理员管理', key: 'admins', icon: 'fa fa-users' ,path : '/AdminManagement'},
 ]

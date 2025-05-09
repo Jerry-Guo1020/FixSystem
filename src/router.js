@@ -11,12 +11,12 @@ import AdminfixManagement from "./components/adminSection/fixManagement.vue";
 import AdminfixSortManagement from "./components/adminSection/fixSortManagement.vue";
 import AdminNotionManagement from "./components/adminSection/notionManagement.vue";
 import AdminOrderManagement from "./components/adminSection/orderManagement.vue";
-import AdminSpeakingManagement from "./components/adminSection/speakingManagement.vue";
+import AdminSpeakingManagement from "./components/adminSection/AdiminspeakingManagement.vue";
 import UserNavBar from "./components/navbar/userNavBar.vue";
 import UserFixManagement from "./components/uesrSection/fixManagement.vue";
 import UserNotionManagement from "./components/uesrSection/notionManagement.vue"
 import UserOrderManagement from "./components/uesrSection/orderManagement.vue"
-import UserSpeakingManagement from "./components/uesrSection/speakingManagement.vue"
+import UserSpeakingManagement from "./components/uesrSection/UserspeakingManagement.vue"
 
 
 
@@ -81,14 +81,14 @@ const routes = [
                 component: AdminOrderManagement,
             },
             {
-                path: "/AdminspeakingManagement",
-                name: "speakingManagement",
-                component: AdminSpeakingManagement,
-            },
-            {
                 path: "/AdminManagement",
                 name: "AdminManagement",
                 component: AdminManagement,
+            },
+            {
+                path: "/AdminspeakingManagement",
+                name: "adminspeakingManagement",
+                component: AdminSpeakingManagement,
             }
         ],
     },
@@ -112,15 +112,15 @@ const routes = [
                 component: UserOrderManagement
             },
             {
-                path: "/speakingManagement",
-                name: "speakingManagement",
-                component: UserSpeakingManagement
-            },
-            {
                 path: "/usernotionManagement",
                 name: "userNotionManagement",
                 component: UserNotionManagement
-            }
+            },
+            {
+                path: "/userspeakingManagement",
+                name: "userspeakingManagement",
+                component: UserSpeakingManagement
+            },
         ]
     },
 ];

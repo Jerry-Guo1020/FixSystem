@@ -1,5 +1,5 @@
 <template>
-    <h2>评论区  </h2>
+    <h2>评论区</h2>
     </template>
     
     <script setup>

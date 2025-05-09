@@ -33,7 +33,7 @@ const toSectionClick = (path) => {
 const menu = [
     {label:"维修管理" , key:'userfixManagement', path: "/userfixManagement"},
     {label:"下单管理" , key:'orderManagement', path: "userorderManagement"},
-    {label:"评论区" , key:'speakingManagement', path: "/speakingManagement"},
+    {label:"评论区" , key:'speakingManagement', path: "/userspeakingManagement"},
     {label:"公告栏" , key:'notionManagement', path: "/usernotionManagement"}
 ];
 </script>
