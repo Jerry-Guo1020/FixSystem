@@ -1,23 +1,31 @@
 <template>
-<div class="user-container">
+  <div class="user-container">
     <div class="user-navbar">
-        <h2 class="title">大学保修管理系统</h2>
-        <div class="menu-container">
-
-        </div>
-    </div>  
-    
-    <div class="user-content-container">
-        <div class="user-side-menu">
-            <div v-for="item in menu" :key="item.key" class="side-menu-item" @click="toSectionClick(item.path)">
-                {{ item.label }}
+      <h2 class="title">大学保修管理系统</h2>
+      <div class="menu-container">
+        <!-- 更多菜单显示 -->
+        <div v-for="item in more" :key="item.key" class="menu-more">
+          {{ item.label }}
+          <div v-if="item.children" class="sub-menu">
+            <div v-for="child in item.children" :key="child.label" class="sub-menu">
+              {{ child.label }}
             </div>
+          </div>
         </div>
-        <main class="main-content">
-            <router-view />
-        </main>
+      </div>
     </div>
-</div>
+
+    <div class="user-content-container">
+      <div class="user-side-menu">
+        <div v-for="item in menu" :key="item.key" class="side-menu-item" @click="toSectionClick(item.path)">
+          {{ item.label }}
+        </div>
+      </div>
+      <main class="main-content">
+        <router-view />
+      </main>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -26,16 +34,27 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const toSectionClick = (path) => {
-    router.push(path);
+  router.push(path);
 }
 
 // 优化后的 menu 路径，全部加上 /usernavbar/ 前缀，避免与 adminNavBar 冲突
 const menu = [
-    {label:"维修管理" , key:'userfixManagement', path: "/userfixManagement"},
-    {label:"下单管理" , key:'orderManagement', path: "userorderManagement"},
-    {label:"评论区" , key:'speakingManagement', path: "/userspeakingManagement"},
-    {label:"公告栏" , key:'notionManagement', path: "/usernotionManagement"}
+  { label: "维修管理", key: 'userfixManagement', path: "/userfixManagement" },
+  { label: "下单管理", key: 'orderManagement', path: "userorderManagement" },
+  { label: "评论区", key: 'speakingManagement', path: "/userspeakingManagement" },
+  { label: "公告栏", key: 'notionManagement', path: "/usernotionManagement" }
 ];
+
+const more = [
+  {
+    label: '更多',
+    key:'projects',
+    children:[
+      {label :'账号设置'},
+      {label :'退出登录' , path:'/login'}
+    ]
+  }
+]
 </script>
 
 <style>
@@ -53,7 +72,8 @@ const menu = [
   overflow: hidden;
 }
 
-.user-navbar, .navbar {
+.user-navbar,
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -68,20 +88,23 @@ const menu = [
   height: 60px;
 }
 
-.user-content-container, .content-container {
+.user-content-container,
+.content-container {
   display: flex;
   margin-top: 60px;
   height: calc(100vh - 60px);
 }
 
-.user-side-menu, .side-menu {
+.user-side-menu,
+.side-menu {
   width: 200px;
   background-color: cornflowerblue;
   height: 100%;
   overflow-y: auto;
 }
 
-.side-menu-item, .menu-item {
+.side-menu-item,
+.menu-item {
   padding: 15px 30px;
   cursor: pointer;
   color: white;
@@ -101,7 +124,8 @@ const menu = [
 }
 
 /* 当鼠标悬停时添加背景色变化 */
-.side-menu-item:hover, .menu-item:hover {
+.side-menu-item:hover,
+.menu-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -111,7 +135,8 @@ const menu = [
   text-align: center;
 }
 
-.sub-menu, .user-sub-menu {
+.sub-menu,
+.user-sub-menu {
   position: absolute;
   top: 100%;
   right: 0;
