@@ -17,12 +17,17 @@ import UserFixManagement from "./components/uesrSection/fixManagement.vue";
 import UserNotionManagement from "./components/uesrSection/notionManagement.vue"
 import UserOrderManagement from "./components/uesrSection/orderManagement.vue"
 import UserSpeakingManagement from "./components/uesrSection/UserspeakingManagement.vue"
-
+import firstAlert from "./components/common/firstAlert.vue"
 
 
 const routes = [
     {
         path: "/",
+        name: "firstAlert",
+        component: firstAlert,
+    },
+    {
+        path: "/home",
         name: "home",
         component: Home,
     },

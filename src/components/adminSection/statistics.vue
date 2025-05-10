@@ -92,21 +92,20 @@ const maxValue = computed(() => {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 让所有内容居中，包括box和chart */
+    align-items: center;          /*让所有内容居中，包括box和chart*/
 }
 
 .box {
-    display: flex; /* 改为flex */
-    justify-content: center; /* 水平居中 */
-    width: 100%; /* 占满父容器宽度 */
-    margin-bottom: 30px; /* 与下方内容拉开距离 */
+    display: flex;                /* 改为flex */
+    justify-content: center;      /* 水平居中 */
+    width: 100%;                  /* 占满父容器宽度 */
+    margin-bottom: 30px;          /* 与下方内容拉开距离 */
 }
 
 .box1 {
     background-color: #5F96AA;
     display: flex;
-    flex-direction: column;
-    /* 改为纵向排列 */
+    flex-direction: column;     /* 改为纵向排列 */
     height: 150px;
     width: 250px;
     margin: 15px;
