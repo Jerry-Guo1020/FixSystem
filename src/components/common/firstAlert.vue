@@ -10,7 +10,8 @@
                         并不其他用途，<br>
                         谢谢您的理解与支持
                     </div>
-                    <button class="btn" :disabled="i > 0" @click="goToHome">{{ i > 0 ? `已经阅读了这个协议(${i})` : `好的，欢迎使用~` }}</button>
+                    <!-- <button class="btn" :disabled="i > 0" @click="goToHome">{{ i > 0 ? `已经阅读了这个协议(${i})` : `好的，欢迎使用~` }}</button> -->
+                    <button class="btn" disabled @click="goToHome">已经阅读了这个协议(6)</button>
                 </div>
             </div>
         </div>
@@ -30,21 +31,41 @@ const goToHome = () => {
     router.push('/home'); // 跳转到根路径，即Home页面
 }
 
-
-
-//获取元素
-const i = ref(5)
-    
-//开启定时器
-onMounted(() => {
-    let n = setInterval(() => {
-        i.value--
-        if (i.value < 0) {
-            //定时器会停止并开放按钮
+(function setBtnTimer() {
+    //获取元素
+    const btn = document.querySelector('.btn')
+    if (!btn) {
+        setTimeout(setBtnTimer, 1);
+        return ;
+    }
+    //倒计时
+    let i = 6;
+    //开启定时器
+    let n = setInterval(function() {
+        i--;
+        btn.innerHTML = `已经阅读了这个协议(${i})`
+        if (i === 0) {
             clearInterval(n)
+            // 定时器停止了，我就可以按钮了
+            btn.disabled = false;
+            btn.innerHTML = '同意'
         }
     }, 1000)
-})
+})();
+
+// //获取元素
+// const i = ref(5)
+    
+// //开启定时器
+// onMounted(() => {
+//     let n = setInterval(() => {
+//         i.value--
+//         if (i.value < 0) {
+//             //定时器会停止并开放按钮
+//             clearInterval(n)
+//         }
+//     }, 1000)
+// })
 </script>
 
 <style scoped>
