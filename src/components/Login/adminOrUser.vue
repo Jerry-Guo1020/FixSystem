@@ -2,14 +2,10 @@
     <div class="container1">
     <div class="container">
         <div class="allcontent">
-        <h1 class="header">注册</h1>
+        <h1 class="header">请选择您登录的类型</h1>
         <br>
-        <p class="content">账号：
-        <input name="account" placeholder="📪请输入账号"></p>
-        <p class="content">密码：
-        <input name="password" placeholder="🔒请输入密码" ></p>
-        <br>
-        <button @click="Register" class="btn_login">注册</button>
+        <button @click="gotoAdminsection" class="btn_login">管理员</button>
+        <button @click="gotoUsersection" class="btn_register">普通用户</button>
     </div>
     </div>
 </div>
@@ -21,13 +17,14 @@ import { useRouter } from 'vue-router';
 
 const router =useRouter();
 
-function gotosection(){
+function gotoAdminsection(){
     router.push("adminnavbar")
     // router.push("/usernavbar")
 }
 
-function Register() {
-    router.push("login")
+function gotoUsersection(){
+    router.push("usernavbar")
+    // router.push("/usernavbar")
 }
 </script>
  <style>

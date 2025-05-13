@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "./Home/Home.vue";
 import Login from "./components/Login/Login.vue";
+import Register from "./components/Login/Register.vue"
 import adminNavbar from "./components/navbar/adminNavbar.vue";
 import AdminStatistics from "./components/adminSection/statistics.vue";
 import AdminStudentManagement from "./components/adminSection/studentsManagement.vue";
@@ -18,7 +19,7 @@ import UserNotionManagement from "./components/uesrSection/notionManagement.vue"
 import UserOrderManagement from "./components/uesrSection/orderManagement.vue"
 import UserSpeakingManagement from "./components/uesrSection/UserspeakingManagement.vue"
 import firstAlert from "./components/common/firstAlert.vue"
-
+import adminOrUser from "./components/Login/adminOrUser.vue";
 
 const routes = [
     {
@@ -32,9 +33,19 @@ const routes = [
         component: Home,
     },
     {
+        path: "/adminoruser",
+        name: "adminOrUser",
+        component: adminOrUser,
+    },
+    {
         path: "/login",
         name: "login",
         component: Login,
+    },
+    {
+        path: "/register",
+        name: "register",
+        component: Register,
     },
     {
         path: "/adminNavbar",

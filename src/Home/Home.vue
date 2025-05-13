@@ -16,7 +16,7 @@ import { useRouter } from 'vue-router';
 const router =useRouter();
 
 function gotologin(){
-        router.push("/login")
+        router.push("adminoruser")
 }
 
 </script>

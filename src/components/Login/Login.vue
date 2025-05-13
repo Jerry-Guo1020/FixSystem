@@ -9,8 +9,8 @@
         <p class="content">密码：
         <input name="password" placeholder="🔒请输入密码" ></p>
         <br>
-        <button @click="gotosection">登录</button>
-        <button>注册</button>
+        <button @click="gotosection" class="btn_login">登录</button>
+        <button @click="Register" class="btn_register">注册</button>
     </div>
     </div>
 </div>
@@ -19,11 +19,16 @@
 <script setup>
 import { useRouter } from 'vue-router';
 
+
 const router =useRouter();
 
 function gotosection(){
     router.push("adminnavbar")
     // router.push("/usernavbar")
+}
+
+function Register() {
+    router.push("register")
 }
 </script>
  <style>
@@ -38,7 +43,7 @@ function gotosection(){
 }
 
 .container1 {
-        /*背景色*/
+    /*背景色*/
     display: flex;                             /*弹性容器，可以让容器里面的元素自动调节大小和位置*/
     justify-content: center;                   /*在水平方向上对齐容器内的子元素*/
     align-items: center;                       /*在垂直方向上对齐容器内的子元素*/
